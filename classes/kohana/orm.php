@@ -826,7 +826,7 @@ class Kohana_ORM {
 	 */
 	public function save()
 	{
-		if (empty($this->_changed))
+		if ( ! $this->empty_pk() && empty($this->_changed))
 			return $this;
 
 		$data = array();
